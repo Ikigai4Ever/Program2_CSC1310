@@ -18,8 +18,3 @@
  *      FUNCTION: getMaterialType()
  *      PURPOSE: getter function for material type
  */
-
-template <typename T>
-std::string getMaterialType(){
-    return materialType;
-}

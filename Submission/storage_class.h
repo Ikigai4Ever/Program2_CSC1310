@@ -1,9 +1,9 @@
 /*
- *      NAME:   Ty Ahrens
- *      PROGRAM: storage_class.h
- *      DATE: 10/23/24
- *      PURPOSE: This class is used as the linked list
- *               class for program 2
+ *      NAME:       Ty Ahrens
+ *      PROGRAM:    storage_class.h
+ *      DATE:       10/23/24
+ *      PURPOSE:    This class is used as the linked list for 
+ *                  program 2
  */
 
 #define STORAGE_CLASS_H
