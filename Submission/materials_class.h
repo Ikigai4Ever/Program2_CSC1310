@@ -1,7 +1,7 @@
 /*
- *      NAME:   Ty Ahrens
+ *         NAME: Ty Ahrens
  *      PROGRAM: materials_class.h
- *      DATE: 10/23/24
+ *         DATE: 10/23/24
  *      PURPOSE: 
  */
 
@@ -13,7 +13,7 @@ class Materials{
 
 
     public:
-    
+
 
 };
 
