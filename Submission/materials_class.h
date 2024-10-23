@@ -7,12 +7,17 @@
 
 #define MATERIALS_CLASS_H
 #ifndef MATERIALS_CLASS_H
+#include <iostream>
+#include <string>
 
 class Materials{
     private:
 
 
     public:
+
+    void setMaterialType(std::string);
+    void setMaterialColor(std::string);
 
 
 };
