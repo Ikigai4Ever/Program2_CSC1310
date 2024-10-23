@@ -36,5 +36,13 @@ class Storage{
 
 };
 
+//****************** FUNCTIONS **********************/
+
+/*
+ *      FUNCTION: getMaterialType()
+ *      PURPOSE: getter function for material type
+ */
+
+
 
 #endif
