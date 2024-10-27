@@ -161,17 +161,59 @@ class Storage{
         return status;
     }
 
-    void sorting_ac() //ascedning sorting
+    void sorting_ac(bool ac) //ascedning sorting is true, descending is flase
     {
+        if (head == NULL || head->next == NULL)
+            return;
+        quicksort(head,tail, ac)
 
     }
 
-    void sorting_dc() //descedning sort because we need both :)
+    
+
+    void quicksort(Node* start, Node* end, bool ac)
     {
+        if (start == end || start == NULL || end == NULL) //not sure if needed
+        return;
+
+        Node* piviot = partition(start,end,ac);
+        
+        if(start != piviot)
+        quicksort(start,end,ac);
+
+        if(piviot != end) //why not end != piviot?
+        quicksort(start,end,ac);
 
     }
 
+    Node* partition(Node* start, Node* end, bool ac)
+    {
+        Material pivdata = end->next;
+        Node * index = start; 
 
+        for(Node* current = start; current != end; current = current->next) //current is the travistor, current does not equal end, move current to next
+        {
+            if((ac&&current->data.getCost() < pivdata.getCost())||(!ac&&current->data.getCost() > pivdata.getCost())) //YUCK, first is for acsending, second is for descnedning
+            {
+                swap(index->data,current->data);
+                index = index->next;
+            }
+
+
+        }
+        swap(index->data,end->data);
+        return index;
+    }
+
+
+    template<typename T>
+    void swap(T &a, T &b) //do i need setters and getters for this?
+    {
+        T temp = a;
+        a = b;
+        b = temp;
+
+    }
 
 
     //Destructor
