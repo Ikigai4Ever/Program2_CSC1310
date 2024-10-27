@@ -61,11 +61,11 @@ class Storage{
         preload.setCost(99.99); //dollars, float
         preload.setAbundance(4); //bags, int
         preload.setIndex(2); //where it is at in the list, int
-        push_front(preload);
+        push_front(preload); //why does it display a message when i select it?
         
     }
 
-    Storage push_front(Material mats) //WILL CHANGE MATERIAL TO T FOR TEMPLATE
+    void push_front(Material mats) //WILL CHANGE MATERIAL TO T FOR TEMPLATE
     {
         Node *newNode = NULL;
         newNode = new Node;
@@ -89,7 +89,7 @@ class Storage{
     }
 
 
-    Storage pop_front(Material &mat) //CHNAGE MAT TO TEMPLATE
+    void pop_front(Material &mat) //CHNAGE MAT TO TEMPLATE
     {
         Node *temp = NULL; //temp node pointer to null
 
@@ -104,7 +104,7 @@ class Storage{
     }
 
 
-    Storage push_bottom(Material mat) //
+    void push_bottom(Material mat) //
     {   
         Node *newNode = NULL;
         newNode = new Node;
@@ -129,7 +129,7 @@ class Storage{
         numMats ++;
     }
 
-    Storage pop_back(Material &mat) //rember for edge cases (ONLY 1 NODE)
+    void pop_back(Material &mat) //rember for edge cases (ONLY 1 NODE)
     {
         Node* current = head;
 
@@ -146,9 +146,30 @@ class Storage{
         tail = current;
         tail->next = NULL;
 
+        numMats--;
     }
 
+    bool isEmpty()
+    {
+        bool status;
 
+        if (numMats > 0)
+            status = false;
+        else
+            status = true;
+
+        return status;
+    }
+
+    void sorting_ac() //ascedning sorting
+    {
+
+    }
+
+    void sorting_dc() //descedning sort because we need both :)
+    {
+
+    }
 
 
 
