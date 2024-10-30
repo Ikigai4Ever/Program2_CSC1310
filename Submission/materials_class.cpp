@@ -13,8 +13,7 @@
  */
 
 void Materials::setMaterialType(std::string materialType){
-
-    this->materialType = materialType;
+    this->matType = materialType;
 }
 
 /*
@@ -26,3 +25,20 @@ void Materials::setMaterialColor(std::string materialColor){
 
     this->materialColor = materialColor;
 }
+
+/*
+ *      FUNCTION: setMaterialPrice() 
+ *       PURPOSE: 
+ */
+
+
+/*
+ *      FUNCTION: setMaterialAmount() 
+ *       PURPOSE: 
+ */
+
+
+/*
+ *      FUNCTION: getMaterialType() 
+ *       PURPOSE: 
+ */
