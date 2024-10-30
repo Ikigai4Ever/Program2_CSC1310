@@ -38,6 +38,7 @@ class Storage{
     Node *tail; //bottom of the queue or stack
     int numMats = 0;
     
+    public:
     Storage() //name, cost, abundance, index
     {
         head = NULL; //do i need to set head and tail to NULL?
@@ -235,7 +236,7 @@ class Storage{
 
 
 
-    public:
+    
 
 };
 
