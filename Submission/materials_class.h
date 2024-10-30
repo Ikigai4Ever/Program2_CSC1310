@@ -5,8 +5,8 @@
  *      PURPOSE: 
  */
 
-#define MATERIALS_CLASS_H
 #ifndef MATERIALS_CLASS_H
+#define MATERIALS_CLASS_H
 #include <iostream>
 #include <string>
 #include "list_node.h"
