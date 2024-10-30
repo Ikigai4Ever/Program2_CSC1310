@@ -14,12 +14,14 @@
 template <typename T>
 class ListNode
 {
-	public:	
-		/*	notice the attributes are public so that the 
+    private:
+        /*	notice the attributes are public so that the 
 			LinkedList class can directly access them */
 			
 		T value;        // Node value
 		ListNode *next; // Pointer to a ListNode object (the next node object)
+
+	public:	
 
 		// Constructor
 		ListNode (T value)
