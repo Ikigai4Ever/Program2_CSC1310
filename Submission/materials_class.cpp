@@ -22,8 +22,7 @@ void Materials::setMaterialType(std::string materialType){
  */
 
 void Materials::setMaterialColor(std::string materialColor){
-
-    this->materialColor = materialColor;
+    this->matColor = materialColor;
 }
 
 /*
@@ -31,14 +30,69 @@ void Materials::setMaterialColor(std::string materialColor){
  *       PURPOSE: 
  */
 
+void Materials::setMaterialPrice(float materialPrice){
+    this->matPrice = materialPrice; 
+}
 
 /*
  *      FUNCTION: setMaterialAmount() 
  *       PURPOSE: 
  */
 
+void Materials::setMaterialAmount(float materialAmount){
+    this->matAmount = materialAmount;
+}
 
 /*
  *      FUNCTION: getMaterialType() 
  *       PURPOSE: 
  */
+
+std::string Materials::getMaterialType(){
+    return this->matType;
+}
+
+/*
+ *      FUNCTION: getMaterialColor() 
+ *       PURPOSE: 
+ */
+
+std::string Materials::getMaterialColor(){
+    return this->matColor;
+}
+
+/*
+ *      FUNCTION: getMaterialPrice() 
+ *       PURPOSE: 
+ */
+
+float Materials::getMaterialPrice(){
+    return this->matPrice;
+}
+
+/*
+ *      FUNCTION: getMaterialType() 
+ *       PURPOSE: 
+ */
+
+float Materials::getMaterialAmount(){
+    return this->matAmount;
+}
+
+/*
+ *      FUNCTION: Materials() 
+ *       PURPOSE: constructor for Materials class
+ */
+
+Materials::Materials(){
+    
+}
+
+/*
+ *      FUNCTION: ~Materials() 
+ *       PURPOSE: deconstructor for Materials class
+ */
+
+Materials::~Materials(){
+ 
+}
