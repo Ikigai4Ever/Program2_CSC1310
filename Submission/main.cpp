@@ -1,7 +1,7 @@
 /*
  *      NAME:   Zander Underwood
  *      PROGRAM: main.cpp
- *      DATE: 10/23/24
+ *      DATE: 10/30/24
  */
 
 #include "storage_class.h"
@@ -13,10 +13,11 @@ using namespace std;
 void printMenu();
 void addMenu();
 void removeMenu();
+void sortMenu();
 
 int main()
 {
-    int choice = 0;
+    int choice = 0, menuChoice = 0;
 
 
     do{
@@ -36,6 +37,31 @@ int main()
             case 1:
             cout<<"\n*********************************************************"<<endl;
             addMenu();
+            cout << "Choice: ";
+            cin >> menuChoice;
+            if(menuChoice > 3||menuChoice < 1)
+            {
+                cout<<"\n*********************************************************"<<endl;
+                cout<<"Sorry you entered a number out of the range. Try again."<<endl;
+            }
+            //menuChoice 1 will add to the top
+            else if(menuChoice == 1)
+            {
+                cout<<"\n*********************************************************"<<endl;
+                cout << "in add to top"<<endl;
+            }
+            //menuChoice 2 will add to the bottom
+            else if(menuChoice == 2)
+            {
+                cout<<"\n*********************************************************"<<endl;
+                cout << "in add to bottom"<<endl;
+
+            }
+            else if(menuChoice == 3)
+            {
+                break;
+            }
+
             cout<<"*********************************************************"<<endl<<endl<<endl;
             break;
             
@@ -43,13 +69,59 @@ int main()
             case 2:
             cout<<"\n*********************************************************"<<endl;
             removeMenu();
+            cout << "Choice: ";
+            cin >> menuChoice;
+            if(menuChoice > 3||menuChoice < 1)
+            {
+                cout<<"\n*********************************************************"<<endl;
+                cout<<"Sorry you entered a number out of the range. Try again."<<endl;
+            }
+            //menuChoice 1 will remove from the top
+            else if(menuChoice == 1)
+            {
+                cout<<"\n*********************************************************"<<endl;
+                cout << "in remove from top"<<endl;
+            }
+            //menuChoice 2 will remove from the bottom
+            else if(menuChoice == 2)
+            {
+                cout<<"\n*********************************************************"<<endl;
+                cout << "in remove from bottom"<<endl;
+            }
+            else if(menuChoice == 3)
+            {
+                break;
+            }
             cout<<"*********************************************************"<<endl<<endl<<endl;
             break;
             
-            //Case 3 will check the materials in storage
+            //Case 3 will sort the materials in storage
             case 3:
             cout<<"\n*********************************************************"<<endl;
-            cout <<"in case 3"<<endl;
+            sortMenu();
+            cout << "Choice: ";
+            cin >> menuChoice;
+            if(menuChoice > 3||menuChoice < 1)
+            {
+                cout<<"\n*********************************************************"<<endl;
+                cout<<"Sorry you entered a number out of the range. Try again."<<endl;
+            }
+            //menuChoice 1 sort by accending order
+            else if(menuChoice == 1)
+            {
+                cout<<"\n*********************************************************"<<endl;
+                cout << "in sort by accending"<<endl;
+            }
+            //menuChoice 2 will sort by decending order
+            else if(menuChoice == 2)
+            {
+                cout<<"\n*********************************************************"<<endl;
+                cout << "in sort by decending"<<endl;
+            }
+            else if(menuChoice == 3)
+            {
+                break;
+            }
             cout<<"*********************************************************"<<endl<<endl<<endl;
             break;
             
@@ -74,7 +146,7 @@ void printMenu(){
     cout<<"\n*********************************************************"<<endl;
     cout<<"1) Add material to storage"<<endl;
     cout<<"2) Take material from storage"<<endl;
-    cout<<"3) Check materials in storage"<<endl;
+    cout<<"3) Sort materials in storage"<<endl;
     cout<<"4) End Program"<<endl;
     cout<<"*********************************************************"<<endl;
 }
@@ -87,8 +159,8 @@ void printMenu(){
 void addMenu(){
     cout<<"\n*********************************************************"<<endl;
     cout<<"1) Add to top"<<endl;
-    cout<<"2) Choose where to add"<<endl;
-    cout<<"3) Add to bottom"<<endl;
+    cout<<"2) Add to bottom"<<endl;
+    cout<<"3) Back"<<endl;
     cout<<"*********************************************************"<<endl;
 
 }
@@ -101,7 +173,19 @@ void addMenu(){
 void removeMenu(){
     cout<<"\n*********************************************************"<<endl;
     cout<<"1) Remove from top"<<endl;
-    cout<<"2) Choose where to remove"<<endl;
-    cout<<"3) Remove from bottom"<<endl;
+    cout<<"2) Remove from bottom"<<endl;
+    cout<<"3) Back"<<endl;
+    cout<<"*********************************************************"<<endl;
+}
+
+/*
+ *      FUNCTION: sortMenu()
+ *      PURPOSE: Prints the menu so the user can sort the storage
+ */
+void sortMenu(){
+    cout<<"\n*********************************************************"<<endl;
+    cout<<"1) Sort Accending"<<endl;
+    cout<<"2) Sort Decending"<<endl;
+    cout<<"3) Back"<<endl;
     cout<<"*********************************************************"<<endl;
 }
