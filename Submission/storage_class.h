@@ -6,8 +6,9 @@
  *                  program 2
  */
 
-#define STORAGE_CLASS_H
+
 #ifndef STORAGE_CLASS_H
+#define STORAGE_CLASS_H
 #include "materials_class.h"
 #include <iostream>
 #include <iomanip>
