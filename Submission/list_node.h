@@ -15,19 +15,26 @@ template <typename T>
 /*****************************************************************
 							ListNode Class
 ******************************************************************/
-class ListNode
-{
-	public:	
-		/*	notice the attributes are public so that the 
-			LinkedList class can directly access them */
-			
-		T value;           // Node value
+class ListNode{
+	
+    private:			
+		T data;           // Node value
 		ListNode *next; // Pointer to a ListNode object (the next node object)
 
+
+    public:	
+        T getData(){
+            return this->data;
+        }
+
+        ListNode getNext(){
+            return this->next;
+        }
+	
 		// Constructor
 		ListNode (T nodeValue)
 		{ 
-			this->value = nodeValue;
+			this->data = nodeValue;
 			this->next = NULL;
 		}
 };
