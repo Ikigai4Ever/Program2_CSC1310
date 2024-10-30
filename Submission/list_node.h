@@ -25,6 +25,14 @@ class ListNode{
         T getData(){
             return this->data;
         }
+
+        void setData(T sentData){
+            this->data = sentData;
+        }
+
+        void setNext(ListNode sentNext){
+            this->next = sentNext;
+        }
 	
 		// Constructor
 		ListNode (T nodeValue){
