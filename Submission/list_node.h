@@ -18,25 +18,23 @@ template <typename T>
 class ListNode{
 	
     private:			
-		T data;           // Node value
+		T data;         // Node data
 		ListNode *next; // Pointer to a ListNode object (the next node object)
-
 
     public:	
         T getData(){
             return this->data;
         }
-
-        ListNode getNext(){
-            return this->next;
-        }
 	
 		// Constructor
-		ListNode (T nodeValue)
-		{ 
+		ListNode (T nodeValue){
 			this->data = nodeValue;
 			this->next = NULL;
 		}
+
+        ~ListNode(){
+
+        }
 };
 
 #endif
