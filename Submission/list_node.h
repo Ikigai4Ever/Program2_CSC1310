@@ -12,21 +12,22 @@
 #include <iomanip>
 
 template <typename T>
+/*****************************************************************
+							ListNode Class
+******************************************************************/
 class ListNode
 {
-    private:
-        /*	notice the attributes are public so that the 
+	public:	
+		/*	notice the attributes are public so that the 
 			LinkedList class can directly access them */
 			
-		T value;        // Node value
+		T value;           // Node value
 		ListNode *next; // Pointer to a ListNode object (the next node object)
 
-	public:	
-
 		// Constructor
-		ListNode (T value)
+		ListNode (T nodeValue)
 		{ 
-			this->value = value;
+			this->value = nodeValue;
 			this->next = NULL;
 		}
 };
