@@ -1,9 +1,9 @@
 /*
  *         NAME: Ty Ahrens
  *      PROGRAM: list_node.h
- *         DATE: 10/23/24
+ *         DATE: 10/31/24
  *      PURPOSE: This class that is representing the other class for 
- *               program 2
+ *               program 2. This is a ListNode template class
  */
 
 #define LIST_NODE_H
@@ -16,22 +16,41 @@ template <typename T>
 							ListNode Class
 ******************************************************************/
 class ListNode{
-	
     private:			
-		T data;         // Node data
+		T data;         // Data of the template type
 		ListNode *next; // Pointer to a ListNode object (the next node object)
 
     public:	
+        /*
+         *      FUNCTION:   getData()
+         *      PURPOSE:    get the data at the current node
+         */
         T getData(){
             return this->data;
         }
 
+        /*
+         *      FUNCTION:   setData()
+         *      PURPOSE:    set the data at the current node
+         */
         void setData(T sentData){
             this->data = sentData;
         }
 
+        /*
+         *      FUNCTION:   sentNext()
+         *      PURPOSE:    set the data at the next node
+         */
         void setNext(ListNode sentNext){
             this->next = sentNext;
+        }
+
+        /*
+         *      FUNCTION:   getNext()
+         *      PURPOSE:    return the next node
+         */
+        ListNode* getNext() const {
+            return this->next;
         }
 	
 		// Constructor
@@ -39,10 +58,6 @@ class ListNode{
 			this->data = nodeValue;
 			this->next = NULL;
 		}
-
-        ~ListNode(){
-
-        }
 };
 
 #endif
