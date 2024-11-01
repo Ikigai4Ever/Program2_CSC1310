@@ -1,7 +1,7 @@
 /*
  *      NAME:   Ty Ahrens
  *      PROGRAM: materials_class.cpp
- *      DATE: 10/23/24
+ *      DATE: 10/31/24
  *      PURPOSE: 
  */
 
@@ -9,7 +9,7 @@
 
 /*
  *      FUNCTION: setMaterialType() 
- *       PURPOSE: 
+ *       PURPOSE: set the material type at the current node 
  */
 
 void Materials::setMaterialType(std::string materialType){
@@ -18,7 +18,7 @@ void Materials::setMaterialType(std::string materialType){
 
 /*
  *      FUNCTION: setMaterialColor() 
- *       PURPOSE: 
+ *       PURPOSE: set the material color at the current node
  */
 
 void Materials::setMaterialColor(std::string materialColor){
@@ -27,25 +27,25 @@ void Materials::setMaterialColor(std::string materialColor){
 
 /*
  *      FUNCTION: setMaterialPrice() 
- *       PURPOSE: 
+ *       PURPOSE: set the material price at the current node
  */
 
-void Materials::setMaterialPrice(float materialPrice){
+void Materials::setMaterialPrice(double materialPrice){
     this->matPrice = materialPrice; 
 }
 
 /*
  *      FUNCTION: setMaterialAmount() 
- *       PURPOSE: 
+ *       PURPOSE: set the material amount at the current node
  */
 
-void Materials::setMaterialAmount(float materialAmount){
+void Materials::setMaterialAmount(double materialAmount){
     this->matAmount = materialAmount;
 }
 
 /*
  *      FUNCTION: getMaterialType() 
- *       PURPOSE: 
+ *       PURPOSE: get the material type from the desired node
  */
 
 std::string Materials::getMaterialType(){
@@ -54,7 +54,7 @@ std::string Materials::getMaterialType(){
 
 /*
  *      FUNCTION: getMaterialColor() 
- *       PURPOSE: 
+ *       PURPOSE: get the material color from the desired node
  */
 
 std::string Materials::getMaterialColor(){
@@ -63,20 +63,44 @@ std::string Materials::getMaterialColor(){
 
 /*
  *      FUNCTION: getMaterialPrice() 
- *       PURPOSE: 
+ *       PURPOSE: get the material price at the current node
  */
 
-float Materials::getMaterialPrice(){
+double Materials::getMaterialPrice(){
     return this->matPrice;
 }
 
 /*
  *      FUNCTION: getMaterialType() 
- *       PURPOSE: 
+ *       PURPOSE: get the material type at the current node
  */
 
-float Materials::getMaterialAmount(){
+double Materials::getMaterialAmount(){
     return this->matAmount;
+}
+
+/*
+ *      FUNCTION: operator== 
+ *       PURPOSE: compare if a material price is equal to the current material price
+ */
+bool Materials::operator==(const Materials& right_comparison){
+    return this->matPrice == right_comparison.matPrice;
+}
+
+/*
+ *      FUNCTION: operator< 
+ *       PURPOSE: compare if a material price is greater than the current material price
+ */
+bool Materials::operator<(const Materials& right_comparision){
+    return this->matPrice < right_comparision.matPrice;
+}
+
+/*
+ *      FUNCTION: operator> 
+ *       PURPOSE: compare if a material price is less than the current material price
+ */
+bool Materials::operator>(const Materials& right_comparison){
+    return this->matPrice > right_comparison.matPrice;
 }
 
 /*
@@ -85,7 +109,19 @@ float Materials::getMaterialAmount(){
  */
 
 Materials::Materials(){
-    
+    std::cin.ignore();
+    std::cout << "Please enter in material name:\t";
+    getline(std::cin, this->matType);
+    setMaterialType(this->matType);  
+    std::cout << "Please enter in material color:\t";
+    getline(std::cin, this->matColor);
+    setMaterialColor(this->matColor);
+    std::cout << "Please enter in material price (nearest cent):\t";
+    std::cin >> this->matPrice;
+    setMaterialPrice(this->matPrice);
+    std::cout << "Please enter in material abundance (nearest hundreth):\t";
+    std::cin >> this->matAmount;
+    setMaterialAmount(this->matAmount);
 }
 
 /*
