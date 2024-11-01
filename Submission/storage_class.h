@@ -188,14 +188,25 @@ class Storage{
         return;
 
         ListNode<Materials>* piviot = partition(start,end,ac);
+        ListNode<Materials>* leftEnd = getLastBeforePivot(start, piviot);
         
-        if (piviot != start) 
-        quicksort(start, piviot, ac); 
+        if (start != piviot) 
+        quicksort(start, leftEnd, ac); 
 
-        if (piviot->getNext() != end) 
+        if (piviot != end) 
         quicksort(piviot->getNext(), end, ac);
 
     }
+
+    ListNode<Materials>* getLastBeforePivot(ListNode<Materials>* start, ListNode<Materials>* pivot) 
+    {
+    ListNode<Materials>* current = start;
+    while (current && current->getNext() != pivot) {
+        current = current->getNext();
+    }
+    return current; // Returns the last node before the pivot
+    }
+
 
     ListNode<Materials>* partition(ListNode<Materials>* start, ListNode<Materials>* end, bool ac)
     {   
