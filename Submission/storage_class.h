@@ -187,7 +187,7 @@ class Storage{
 
     void quicksort(ListNode<Materials>* start, ListNode<Materials>* end, bool ac)
     {
-        cout << "hello you are in quicksort";
+        std::cout << "hello you are in quicksort";
         if (start == end || start == NULL || end == NULL) //not sure if needed
         return;
 
@@ -203,7 +203,7 @@ class Storage{
 
     ListNode<Materials>* partition(ListNode<Materials>* start, ListNode<Materials>* end, bool ac)
     {   
-        cout << "hello you are in partition";
+        std::cout << "hello you are in partition";
         Materials pivdata = end->getData();
         ListNode<Materials>* index = start; 
 
