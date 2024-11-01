@@ -48,7 +48,7 @@ void Materials::setMaterialAmount(double materialAmount){
  *       PURPOSE: get the material type from the desired node
  */
 
-std::string Materials::getMaterialType(){
+std::string Materials::getMaterialType()const{
     return this->matType;
 }
 
@@ -57,7 +57,7 @@ std::string Materials::getMaterialType(){
  *       PURPOSE: get the material color from the desired node
  */
 
-std::string Materials::getMaterialColor(){
+std::string Materials::getMaterialColor()const{
     return this->matColor;
 }
 
@@ -66,7 +66,7 @@ std::string Materials::getMaterialColor(){
  *       PURPOSE: get the material price at the current node
  */
 
-double Materials::getMaterialPrice(){
+float Materials::getMaterialPrice()const{
     return this->matPrice;
 }
 
@@ -75,31 +75,34 @@ double Materials::getMaterialPrice(){
  *       PURPOSE: get the material type at the current node
  */
 
-double Materials::getMaterialAmount(){
+float Materials::getMaterialAmount()const{
     return this->matAmount;
 }
 
 /*
- *      FUNCTION: operator== 
- *       PURPOSE: compare if a material price is equal to the current material price
+ *      FUNCTION: operator==() 
+ *       PURPOSE: 
  */
-bool Materials::operator==(const Materials& right_comparison){
+bool Materials::operator==(const Materials& right_comparison)
+{
     return this->matPrice == right_comparison.matPrice;
 }
 
 /*
- *      FUNCTION: operator< 
- *       PURPOSE: compare if a material price is greater than the current material price
+ *      FUNCTION: operator<() 
+ *       PURPOSE: 
  */
-bool Materials::operator<(const Materials& right_comparision){
-    return this->matPrice < right_comparision.matPrice;
+bool Materials::operator<(const Materials& right_comparison)
+{
+    return this->matPrice < right_comparison.matPrice;
 }
 
 /*
- *      FUNCTION: operator> 
- *       PURPOSE: compare if a material price is less than the current material price
+ *      FUNCTION: operator>()
+ *       PURPOSE: 
  */
-bool Materials::operator>(const Materials& right_comparison){
+bool Materials::operator>(const Materials& right_comparison)
+{
     return this->matPrice > right_comparison.matPrice;
 }
 

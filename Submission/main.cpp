@@ -14,13 +14,16 @@ void printMenu();
 void addMenu();
 void removeMenu();
 void sortMenu();
+void addMat(Materials &mat);
 
 int main()
 {
     int choice = 0, menuChoice = 0;
-
+    Storage myStorage;
+    Materials myMats;
 
     do{
+        cout <<myStorage;
         //prints menu
         printMenu();
         cout<<"Choice:";
@@ -48,13 +51,17 @@ int main()
             else if(menuChoice == 1)
             {
                 cout<<"\n*********************************************************"<<endl;
-                cout << "in add to top"<<endl;
+                addMat(myMats); //calls addMat for user input
+                myStorage.push_front(myMats); //push the Mat to the top of list
+                
             }
             //menuChoice 2 will add to the bottom
             else if(menuChoice == 2)
             {
                 cout<<"\n*********************************************************"<<endl;
-                cout << "in add to bottom"<<endl;
+                addMat(myMats); //calls addMat for user input
+                myStorage.push_bottom(myMats); //push the mat to the bottom of the list
+                
 
             }
             else if(menuChoice == 3)
@@ -80,13 +87,15 @@ int main()
             else if(menuChoice == 1)
             {
                 cout<<"\n*********************************************************"<<endl;
-                cout << "in remove from top"<<endl;
+                myStorage.pop_front(); //pops the front element from the list
+                
             }
             //menuChoice 2 will remove from the bottom
             else if(menuChoice == 2)
             {
                 cout<<"\n*********************************************************"<<endl;
-                cout << "in remove from bottom"<<endl;
+                myStorage.pop_back(); //pops the bottom element from the list
+                
             }
             else if(menuChoice == 3)
             {
@@ -110,13 +119,15 @@ int main()
             else if(menuChoice == 1)
             {
                 cout<<"\n*********************************************************"<<endl;
-                cout << "in sort by accending"<<endl;
+                myStorage.sorting_ac(true); //bool is true, so sort in ascending
+                
             }
             //menuChoice 2 will sort by decending order
             else if(menuChoice == 2)
             {
                 cout<<"\n*********************************************************"<<endl;
-                cout << "in sort by decending"<<endl;
+                myStorage.sorting_ac(false); //bool is false, so sort in decending
+                
             }
             else if(menuChoice == 3)
             {
@@ -188,4 +199,30 @@ void sortMenu(){
     cout<<"2) Sort Decending"<<endl;
     cout<<"3) Back"<<endl;
     cout<<"*********************************************************"<<endl;
+}
+
+void addMat(Materials &mat) //gets user input for a material
+{
+    string wordtemp; //uses temps to set atributtes
+    float numtemp;
+    cout<<"\n*********************************************************"<<endl;
+    cout << "Type) ";
+    cin.ignore(); //ignore  
+    getline(cin,wordtemp);
+    mat.setMaterialType(wordtemp);
+    cout << endl;
+    cout<< "Color) ";
+    getline(cin,wordtemp);
+    mat.setMaterialColor(wordtemp);
+    cout << endl;
+    cout<< "Price) ";
+    cin >> numtemp;
+    mat.setMaterialPrice(numtemp);
+    cout << endl;
+    cout<< "Amount) ";
+    cin >> numtemp;
+    mat.setMaterialAmount(numtemp);
+    cout<< endl;
+
+    
 }
