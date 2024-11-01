@@ -18,18 +18,6 @@
 
 class Storage{
     private:
-        
-    
-    
-
-    //functions (add to top, add to bottom, remove from top, remove from bottom, sorting, is empty, clear, constructer, deconstructer)
-
-
-   
-		
-
-		
-		
     
     ListNode<Materials> *head; //top of the linked list
     ListNode<Materials> *tail; //bottom of the linked list
@@ -87,8 +75,12 @@ class Storage{
 
     void pop_front(Materials &mat) //CHNAGE MAT TO TEMPLATE
     {
-        if (isEmpty()) //edge case for calling when empty
+        if (isEmpty()) //edeg case for empty
+        {
+            std::cout<<"\nSTORAGE IS EMPTY GOOBER\n";
+
             return;
+        } 
 
       
         ListNode<Materials>* temp = head;
@@ -131,8 +123,12 @@ class Storage{
 
     void pop_back(Materials &mat) //rember for edge cases (ONLY 1 NODE)
     {
-        if (isEmpty()) //edge case for calling when empty
+        if (isEmpty()) //edeg case for empty
+        {
+            std::cout<<"\nSTORAGE IS EMPTY GOOBER\n";
+
             return;
+        } 
 
         mat = tail->getData();
 
@@ -175,7 +171,7 @@ class Storage{
         return status;
     }
 
-    void sorting_ac(bool ac) //ascedning sorting is true, descending is flase
+    void sorting_ac(bool ac) //true is acsending, false is descnding, breaks here
     {
         if (head == NULL || head->getNext() == NULL)
             return;
@@ -187,21 +183,23 @@ class Storage{
 
     void quicksort(ListNode<Materials>* start, ListNode<Materials>* end, bool ac)
     {
-        if (start == end || start == NULL || end == NULL) //not sure if needed
+        
+        if (start == NULL|| start == end || start == end->getNext()) //not sure if needed
         return;
 
         ListNode<Materials>* piviot = partition(start,end,ac);
         
         if(start != piviot)
-        quicksort(start,piviot,ac);
+        quicksort(piviot->getNext(),end,ac); 
 
         if(piviot != end) 
-        quicksort(piviot->getNext(),end,ac);
+        quicksort(start,piviot,ac);
 
     }
 
     ListNode<Materials>* partition(ListNode<Materials>* start, ListNode<Materials>* end, bool ac)
-    {
+    {   
+        
         Materials pivdata = end->getData();
         ListNode<Materials>* index = start; 
 
@@ -209,7 +207,10 @@ class Storage{
         {
             if((ac&&current->getData() < pivdata)||(!ac&&current->getData() > pivdata)) //YUCK, first is for acsending, second is for descnedning
             {
-                swap(index->getData(),current->getData());
+                
+            
+                swap(index->getData(), current->getData());
+            
                 index = index->getNext();
             }
 
@@ -224,6 +225,7 @@ class Storage{
     template<typename T>
     void swap(T &a, T &b) 
     {
+        
     T temp = a; // temporay version of a
     a = b;      // make a and b
     b = temp;   // make b into a
@@ -233,17 +235,17 @@ class Storage{
     friend std::ostream& operator<<(std::ostream &os, const Storage &storage) 
     {
     ListNode<Materials>* current = storage.head; // Start at head of the list
-    
+    os<<"\n(START OF LIST)\n";
     while (current != NULL) // goes through the linked list
     { 
         const Materials &mat = current->getData();
         os << "Type: " << mat.getMaterialType()
            << ", Color: " << mat.getMaterialColor()
            << ", Price: " << mat.getMaterialPrice()
-           << ", Amount: " << mat.getMaterialAmount() << std::endl;
+           << ", Amount: " << mat.getMaterialAmount();
         current = current->getNext(); // Move to the next node in the linked list
     }
-    
+    os<<"\n(END OF LIST)\n";
     return os; 
 }
 
