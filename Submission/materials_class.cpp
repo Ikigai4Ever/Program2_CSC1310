@@ -30,7 +30,7 @@ void Materials::setMaterialColor(std::string materialColor){
  *       PURPOSE: set the material price at the current node
  */
 
-void Materials::setMaterialPrice(double materialPrice){
+void Materials::setMaterialPrice(float materialPrice){
     this->matPrice = materialPrice; 
 }
 
@@ -39,7 +39,7 @@ void Materials::setMaterialPrice(double materialPrice){
  *       PURPOSE: set the material amount at the current node
  */
 
-void Materials::setMaterialAmount(double materialAmount){
+void Materials::setMaterialAmount(float materialAmount){
     this->matAmount = materialAmount;
 }
 
@@ -111,24 +111,9 @@ bool Materials::operator>(const Materials& right_comparison)
  *       PURPOSE: constructor for Materials class
  */
 
-Materials::Materials(){
-    std::cin.ignore();
-    //get the material type
-    std::cout << "Please enter in material name:\t";
-    getline(std::cin, this->matType);
-    setMaterialType(this->matType);
-    //get the material color  
-    std::cout << "Please enter in material color:\t";
-    getline(std::cin, this->matColor);
-    setMaterialColor(this->matColor);
-    //get the material price
-    std::cout << "Please enter in material price (nearest cent):\t";
-    std::cin >> this->matPrice;
-    setMaterialPrice(this->matPrice);
-    //get the material amount
-    std::cout << "Please enter in material abundance (nearest hundreth):\t";
-    std::cin >> this->matAmount;
-    setMaterialAmount(this->matAmount);
+Materials::Materials()
+{
+    
 }
 
 /*

@@ -29,6 +29,7 @@ class Materials{
     std::string getMaterialColor()const;
     float getMaterialPrice()const;
     float getMaterialAmount()const;
+    
 
     bool operator==(const Materials &right_comparison); 
 
@@ -47,22 +48,17 @@ class Materials{
         void setMaterialColor(std::string);
         void setMaterialPrice(double);
         void setMaterialAmount(double);
-        std::string getMaterialType();
-        std::string getMaterialColor();
-        double getMaterialPrice();
-        double getMaterialAmount();
+        std::string getMaterialType()const;
+        std::string getMaterialColor()const;
+        float getMaterialPrice()const;
+        float getMaterialAmount()const;
 
         /*************** OVERLOADED OPERATORS ***************/
         bool operator==(const Materials&);
         bool operator<(const Materials&);
         bool operator>(const Materials&);
-        friend std::ostream& operator<<(std::ostream& os, Materials& currentMaterial){
-            os << "\nMATERIAL NAME:\t" << currentMaterial.matType 
-            << "\nMATERIAL COLOR:\t" << currentMaterial.matColor 
-            << "\nMATERIAL AMOUNT:\t" << currentMaterial.matAmount 
-            << "\nMATERIAL COST:\t" << currentMaterial.matPrice << "\n";
-            return os;
-        }
+        
+        
 };
 
 
