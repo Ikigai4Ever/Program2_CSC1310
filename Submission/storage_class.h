@@ -187,7 +187,7 @@ class Storage{
 
     void quicksort(ListNode<Materials>* start, ListNode<Materials>* end, bool ac)
     {
-        //std::cout << "hello you are in quicksort";
+        
         if (start == NULL|| start == end || start == end->getNext()) //not sure if needed
         return;
 
@@ -203,7 +203,7 @@ class Storage{
 
     ListNode<Materials>* partition(ListNode<Materials>* start, ListNode<Materials>* end, bool ac)
     {   
-        //std::cout << "hello you are in partition";
+        
         Materials pivdata = end->getData();
         ListNode<Materials>* index = start; 
 
@@ -229,7 +229,7 @@ class Storage{
     template<typename T>
     void swap(T &a, T &b) 
     {
-        std::cout << "HEY BIG DWAG YOUR IN SWAP";
+        
     T temp = a; // temporay version of a
     a = b;      // make a and b
     b = temp;   // make b into a
@@ -239,7 +239,7 @@ class Storage{
     friend std::ostream& operator<<(std::ostream &os, const Storage &storage) 
     {
     ListNode<Materials>* current = storage.head; // Start at head of the list
-    
+    os<<"\n(START OF LIST)\n";
     while (current != NULL) // goes through the linked list
     { 
         const Materials &mat = current->getData();
@@ -249,7 +249,7 @@ class Storage{
            << ", Amount: " << mat.getMaterialAmount() << std::endl;
         current = current->getNext(); // Move to the next node in the linked list
     }
-    
+    os<<"\n(END OF LIST)\n";
     return os; 
 }
 
