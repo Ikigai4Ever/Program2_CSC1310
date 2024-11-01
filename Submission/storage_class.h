@@ -18,18 +18,6 @@
 
 class Storage{
     private:
-        
-    
-    
-
-    //functions (add to top, add to bottom, remove from top, remove from bottom, sorting, is empty, clear, constructer, deconstructer)
-
-
-   
-		
-
-		
-		
     
     ListNode<Materials> *head; //top of the linked list
     ListNode<Materials> *tail; //bottom of the linked list
@@ -87,8 +75,12 @@ class Storage{
 
     void pop_front(Materials &mat) //CHNAGE MAT TO TEMPLATE
     {
-        if (isEmpty()) //edge case for calling when empty
+        if (isEmpty()) //edeg case for empty
+        {
+            std::cout<<"\nSTORAGE IS EMPTY GOOBER\n";
+
             return;
+        } 
 
       
         ListNode<Materials>* temp = head;
@@ -131,8 +123,12 @@ class Storage{
 
     void pop_back(Materials &mat) //rember for edge cases (ONLY 1 NODE)
     {
-        if (isEmpty()) //edge case for calling when empty
+        if (isEmpty()) //edeg case for empty
+        {
+            std::cout<<"\nSTORAGE IS EMPTY GOOBER\n";
+
             return;
+        } 
 
         mat = tail->getData();
 
@@ -246,7 +242,7 @@ class Storage{
         os << "Type: " << mat.getMaterialType()
            << ", Color: " << mat.getMaterialColor()
            << ", Price: " << mat.getMaterialPrice()
-           << ", Amount: " << mat.getMaterialAmount() << std::endl;
+           << ", Amount: " << mat.getMaterialAmount();
         current = current->getNext(); // Move to the next node in the linked list
     }
     os<<"\n(END OF LIST)\n";
