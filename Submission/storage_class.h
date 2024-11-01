@@ -175,7 +175,7 @@ class Storage{
         return status;
     }
 
-    void sorting_ac(bool ac) //ascedning sorting is true, descending is flase
+    void sorting_ac(bool ac) //true is acsending, false is descnding, breaks here
     {
         if (head == NULL || head->getNext() == NULL)
             return;
@@ -187,6 +187,7 @@ class Storage{
 
     void quicksort(ListNode<Materials>* start, ListNode<Materials>* end, bool ac)
     {
+        cout << "hello you are in quicksort";
         if (start == end || start == NULL || end == NULL) //not sure if needed
         return;
 
@@ -201,7 +202,8 @@ class Storage{
     }
 
     ListNode<Materials>* partition(ListNode<Materials>* start, ListNode<Materials>* end, bool ac)
-    {
+    {   
+        cout << "hello you are in partition";
         Materials pivdata = end->getData();
         ListNode<Materials>* index = start; 
 
