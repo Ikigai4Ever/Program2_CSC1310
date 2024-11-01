@@ -1,13 +1,14 @@
 /*
  *         NAME: Ty Ahrens
  *      PROGRAM: list_node.h
- *         DATE: 10/31/24
+ *         DATE: 11/1/24
  *      PURPOSE: This class that is representing the other class for 
  *               program 2. This is a ListNode template class
  */
 
-#define LIST_NODE_H
 #ifndef LIST_NODE_H
+#define LIST_NODE_H
+
 #include <iostream>
 #include <iomanip>
 
@@ -18,35 +19,20 @@ class ListNode{
 		ListNode *next; // Pointer to a ListNode object (the next node object)
 
     public:	
-        /*
-         *      FUNCTION:   getData()
-         *      PURPOSE:    get the data at the current node
-         */
-        T getData(){
+        T& getData(){
             return this->data;
         }
 
-        /*
-         *      FUNCTION:   setData()
-         *      PURPOSE:    set the data at the current node
-         */
-        void setData(T sentData){
+        void setData(T sentData) const
+        {
             this->data = sentData;
         }
 
-        /*
-         *      FUNCTION:   sentNext()
-         *      PURPOSE:    set the data at the next node
-         */
-        void setNext(ListNode sentNext){
+        void setNext(ListNode* sentNext){
             this->next = sentNext;
         }
-
-        /*
-         *      FUNCTION:   getNext()
-         *      PURPOSE:    return the next node
-         */
-        ListNode* getNext() const {
+        ListNode* getNext() const 
+        {
             return this->next;
         }
 	
