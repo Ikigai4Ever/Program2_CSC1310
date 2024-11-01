@@ -48,7 +48,7 @@ void Materials::setMaterialAmount(float materialAmount){
  *       PURPOSE: 
  */
 
-std::string Materials::getMaterialType(){
+std::string Materials::getMaterialType()const{
     return this->matType;
 }
 
@@ -57,7 +57,7 @@ std::string Materials::getMaterialType(){
  *       PURPOSE: 
  */
 
-std::string Materials::getMaterialColor(){
+std::string Materials::getMaterialColor()const{
     return this->matColor;
 }
 
@@ -66,7 +66,7 @@ std::string Materials::getMaterialColor(){
  *       PURPOSE: 
  */
 
-float Materials::getMaterialPrice(){
+float Materials::getMaterialPrice()const{
     return this->matPrice;
 }
 
@@ -75,8 +75,24 @@ float Materials::getMaterialPrice(){
  *       PURPOSE: 
  */
 
-float Materials::getMaterialAmount(){
+float Materials::getMaterialAmount()const{
     return this->matAmount;
+}
+
+
+bool Materials::operator==(const Materials& right_comparison)
+{
+    return this->matPrice == right_comparison.matPrice;
+}
+
+bool Materials::operator<(const Materials& right_comparison)
+{
+    return this->matPrice < right_comparison.matPrice;
+}
+
+bool Materials::operator>(const Materials& right_comparison)
+{
+    return this->matPrice > right_comparison.matPrice;
 }
 
 /*
