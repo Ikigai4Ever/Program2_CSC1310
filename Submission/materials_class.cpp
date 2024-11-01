@@ -1,7 +1,7 @@
 /*
  *      NAME:   Ty Ahrens
  *      PROGRAM: materials_class.cpp
- *      DATE: 10/23/24
+ *      DATE: 10/31/24
  *      PURPOSE: 
  */
 
@@ -9,7 +9,7 @@
 
 /*
  *      FUNCTION: setMaterialType() 
- *       PURPOSE: 
+ *       PURPOSE: set the material type at the current node 
  */
 
 void Materials::setMaterialType(std::string materialType){
@@ -18,7 +18,7 @@ void Materials::setMaterialType(std::string materialType){
 
 /*
  *      FUNCTION: setMaterialColor() 
- *       PURPOSE: 
+ *       PURPOSE: set the material color at the current node
  */
 
 void Materials::setMaterialColor(std::string materialColor){
@@ -27,7 +27,7 @@ void Materials::setMaterialColor(std::string materialColor){
 
 /*
  *      FUNCTION: setMaterialPrice() 
- *       PURPOSE: 
+ *       PURPOSE: set the material price at the current node
  */
 
 void Materials::setMaterialPrice(float materialPrice){
@@ -36,7 +36,7 @@ void Materials::setMaterialPrice(float materialPrice){
 
 /*
  *      FUNCTION: setMaterialAmount() 
- *       PURPOSE: 
+ *       PURPOSE: set the material amount at the current node
  */
 
 void Materials::setMaterialAmount(float materialAmount){
@@ -45,7 +45,7 @@ void Materials::setMaterialAmount(float materialAmount){
 
 /*
  *      FUNCTION: getMaterialType() 
- *       PURPOSE: 
+ *       PURPOSE: get the material type from the desired node
  */
 
 std::string Materials::getMaterialType(){
@@ -54,7 +54,7 @@ std::string Materials::getMaterialType(){
 
 /*
  *      FUNCTION: getMaterialColor() 
- *       PURPOSE: 
+ *       PURPOSE: get the material color from the desired node
  */
 
 std::string Materials::getMaterialColor(){
@@ -63,7 +63,7 @@ std::string Materials::getMaterialColor(){
 
 /*
  *      FUNCTION: getMaterialPrice() 
- *       PURPOSE: 
+ *       PURPOSE: get the material price at the current node
  */
 
 float Materials::getMaterialPrice(){
@@ -72,7 +72,7 @@ float Materials::getMaterialPrice(){
 
 /*
  *      FUNCTION: getMaterialType() 
- *       PURPOSE: 
+ *       PURPOSE: get the material type at the current node
  */
 
 float Materials::getMaterialAmount(){
