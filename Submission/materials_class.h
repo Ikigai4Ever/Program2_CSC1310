@@ -1,7 +1,7 @@
 /*
  *         NAME: Ty Ahrens
  *      PROGRAM: materials_class.h
- *         DATE: 10/23/24
+ *         DATE: 11/1/24
  *      PURPOSE: 
  */
 #ifndef MATERIALS_CLASS_H
@@ -29,7 +29,7 @@ class Materials{
     float getMaterialPrice()const;
     float getMaterialAmount()const;
 
-    bool operator==(const Materials &right_comparison);
+    bool operator==(const Materials &right_comparison); 
 
     bool operator<(const Materials &right_comparison);
 

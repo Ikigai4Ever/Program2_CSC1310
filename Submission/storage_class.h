@@ -1,7 +1,7 @@
 /*
  *      NAME:       Christopher Bowman
  *      PROGRAM:    storage_class.h
- *      DATE:       10/23/24
+ *      DATE:       11/1/24
  *      PURPOSE:    This class is used as the linked list for 
  *                  program 2
  */
@@ -19,17 +19,21 @@
 class Storage{
     private:
     
-    ListNode<Materials> *head; //top of the linked list
-    ListNode<Materials> *tail; //bottom of the linked list
-    int numMats = 0;
+    ListNode<Materials> *head; //pointer to top of the linked list
+    ListNode<Materials> *tail; //pointer to bottom of the linked list
+    int numMats = 0; //number of materials in storage
     
     public:
+/*
+ *      FUNCTION: Storage() 
+ *       PURPOSE: Constructer to preload materials
+ */
     Storage() //name, ccolor, price, abundance
     {
-        head = NULL; //do i need to set head and tail to NULL?
+        head = NULL; //set both to NULL 
         tail = NULL;
 
-        Materials preload;  //CHAGNE TO TEMPLATE 
+        Materials preload;  //preload material 
 
         preload.setMaterialType("Mulch");
         preload.setMaterialColor("Black"); 
@@ -47,24 +51,28 @@ class Storage{
         preload.setMaterialColor("Grey"); 
         preload.setMaterialPrice(400.99); 
         preload.setMaterialAmount(3); 
-        push_front(preload); //why does it display a message when i select it?
+        push_front(preload); 
         
     }
 
-    void push_front(const Materials &mat) //WILL CHANGE MATERIAL TO T FOR TEMPLATE
+/*
+ *      FUNCTION: push_front() 
+ *       PURPOSE: push to front of list
+ */
+    void push_front(const Materials &mat) 
     {
-        ListNode<Materials> *newNode = new ListNode<Materials>(mat);
+        ListNode<Materials> *newNode = new ListNode<Materials>(mat); //create new list node
         
 
-        if(isEmpty())
+        if(isEmpty()) //edge case for if empty
         {
             head = newNode;
             tail = newNode;
 
         }
-        else 
+        else //otherwise 
         {
-            newNode->setNext(head);
+            newNode->setNext(head); //set newNode as the head and make it point to the previos head
             head = newNode;
 
         }
@@ -72,19 +80,21 @@ class Storage{
         numMats ++;
     }
 
-
-    void pop_front(Materials &mat) //CHNAGE MAT TO TEMPLATE
+/*
+ *      FUNCTION: pop_front() 
+ *       PURPOSE: remove from the top of the list
+ */
+    void pop_front(Materials &mat) 
     {
-        if (isEmpty()) //edeg case for empty
+        if (isEmpty()) //edge case for empty
         {
-            std::cout<<"\nSTORAGE IS EMPTY GOOBER\n";
-
+            
             return;
         } 
 
       
-        ListNode<Materials>* temp = head;
-        mat = head->getData(); 
+        ListNode<Materials>* temp = head; //set the temp to the head
+        mat = head->getData();                                      //maybe delete this after
         head = head->getNext();
         delete temp;
         
@@ -98,13 +108,16 @@ class Storage{
         numMats --;
     }
 
-
-    void push_bottom(const Materials &mat) //
+/*
+ *      FUNCTION: push_bottom() 
+ *       PURPOSE: add to the bottom of the list
+ */
+    void push_bottom(const Materials &mat) 
     {   
-        ListNode<Materials>* newNode = new ListNode<Materials>(mat);
+        ListNode<Materials>* newNode = new ListNode<Materials>(mat); //create a new listNode
 
 
-        if (isEmpty())
+        if (isEmpty()) //edge case for when list is empty
         {
             head = newNode;
             tail = newNode;
@@ -113,24 +126,28 @@ class Storage{
 
         else
         {
-            tail->setNext(newNode);
-            tail = newNode;
+            tail->setNext(newNode); //set teh current tail next to the newNode
+            tail = newNode; //set newNode to tail
 
         }
 
         numMats ++;
     }
 
-    void pop_back(Materials &mat) //rember for edge cases (ONLY 1 NODE)
+
+/*
+ *      FUNCTION: pop_back() 
+ *       PURPOSE: remove from the bottom of the list 
+ */
+    void pop_back(Materials &mat) 
     {
         if (isEmpty()) //edeg case for empty
         {
-            std::cout<<"\nSTORAGE IS EMPTY GOOBER\n";
 
             return;
         } 
 
-        mat = tail->getData();
+        mat = tail->getData();                                        //delete after
 
         if(head==tail) //edge case for one elemnt linked list
         {
@@ -142,7 +159,7 @@ class Storage{
         else
         {
             ListNode<Materials>* current = head;
-            while (current->getNext() != tail)
+            while (current->getNext() != tail) //finds the elemnt before tail
             {
 
                 current = current->getNext();
@@ -151,7 +168,7 @@ class Storage{
 
             delete tail;
             tail = current;
-            tail->setNext(NULL);
+            tail->setNext(NULL); //make sure to set tail Next to null after deletion
 
         }
 
@@ -159,7 +176,11 @@ class Storage{
         numMats--;
     }
 
-    bool isEmpty()
+/*
+ *      FUNCTION: isEmpty() 
+ *       PURPOSE: checks the number of mats in storage to find if empty
+ */
+    bool isEmpty() 
     {
         bool status;
 
@@ -171,68 +192,87 @@ class Storage{
         return status;
     }
 
-    void sorting_ac(bool ac) //true is acsending, false is descnding, breaks here
+
+/*
+ *      FUNCTION: sorting_ac() 
+ *       PURPOSE: when ac is true, sort ascending. When ac is false, sort descedning
+ */
+    void sorting_ac(bool ac) 
     {
-        if (head == NULL || head->getNext() == NULL)
+        if (head == NULL || head->getNext() == NULL) //edge case for one element and empty
             return;
         quicksort(head,tail, ac);
 
     }
 
     
-
+/*
+ *      FUNCTION: quicksort() 
+ *       PURPOSE: sortrs the linked list with a piviot element and sorting to the left of a piviot and right of the piviot
+ */
     void quicksort(ListNode<Materials>* start, ListNode<Materials>* end, bool ac)
     {
         
-        if (start == NULL|| start == end || start == end->getNext()) //not sure if needed
+        if (start == NULL|| start == end || start == end->getNext()) //edge case exit constions to get out of quicksort
         return;
 
-        ListNode<Materials>* piviot = partition(start,end,ac);
-        ListNode<Materials>* leftEnd = getLastBeforePivot(start, piviot);
+        ListNode<Materials>* piviot = partition(start,end,ac); //find piviot element
+        ListNode<Materials>* leftEnd = BeforePivot(start, piviot); //find element beofre piviot
         
-        if (start != piviot) 
+        if (start != piviot) //if the start does not equal the piviot, quicksort the left of the piviot
         quicksort(start, leftEnd, ac); 
 
-        if (piviot != end) 
+        if (piviot != end) //if the piviot does not equal the end, sort the right of the piviot
         quicksort(piviot->getNext(), end, ac);
 
     }
 
-    ListNode<Materials>* getLastBeforePivot(ListNode<Materials>* start, ListNode<Materials>* pivot) 
+/*
+ *      FUNCTION: BeforePivot() 
+ *       PURPOSE: entire purpose is to find node before piviot
+ */
+    ListNode<Materials>* BeforePivot(ListNode<Materials>* start, ListNode<Materials>* piviot) 
     {
-    ListNode<Materials>* current = start;
-    while (current && current->getNext() != pivot) {
-        current = current->getNext();
-    }
-    return current; // Returns the last node before the pivot
+        ListNode<Materials>* current = start; //set current to start of list
+        while (current && current->getNext() != piviot) //while current and current next do not equal piviot, traverse the list
+        {
+            current = current->getNext();
+        }
+        return current; // Returns the last node before the piviot
     }
 
-
-    ListNode<Materials>* partition(ListNode<Materials>* start, ListNode<Materials>* end, bool ac)
+/*
+ *      FUNCTION: partition() 
+ *       PURPOSE: partition's list around piviot element
+ */
+    ListNode<Materials>* partition(ListNode<Materials>* start, ListNode<Materials>* end, bool ac) 
     {   
         
-        Materials pivdata = end->getData();
-        ListNode<Materials>* index = start; 
+        Materials pivdata = end->getData(); //used for comparison
+        ListNode<Materials>* index = start; //used to track where element will be swapped
 
         for(ListNode<Materials>* current = start; current != end; current = current->getNext()) //current is the travistor, current does not equal end, move current to next
         {
-            if((ac&&current->getData() < pivdata)||(!ac&&current->getData() > pivdata)) //YUCK, first is for acsending, second is for descnedning
+            if((ac&&current->getData() < pivdata)||(!ac&&current->getData() > pivdata)) //YUCK, if the bool is true AND current is less than pivdata, swap. OR, is bool is false AND current is greater than pivdata, swap
             {
                 
             
-                swap(index->getData(), current->getData());
+                swap(index->getData(), current->getData()); //swap the data of the index and current
             
-                index = index->getNext();
+                index = index->getNext(); //increment index
             }
 
 
         }
-        swap(index->getData(),end->getData());
+        swap(index->getData(),end->getData()); //swap index and end
         return index;
     }
 
 
-    
+/*
+ *      FUNCTION: swap() 
+ *       PURPOSE: template to swap the data of materials 
+ */    
     template<typename T>
     void swap(T &a, T &b) 
     {
@@ -242,7 +282,10 @@ class Storage{
     b = temp;   // make b into a
     }
 
-
+/*
+ *      FUNCTION: operator<<() 
+ *       PURPOSE: overloaded output operator to print of the linked list
+ */
     friend std::ostream& operator<<(std::ostream &os, const Storage &storage) 
     {
     ListNode<Materials>* current = storage.head; // Start at head of the list
@@ -261,7 +304,10 @@ class Storage{
 }
 
 
-    //Destructor
+/*
+ *      FUNCTION: ~Storage() 
+ *       PURPOSE: calls pop_front until it is empty 
+ */
     ~Storage() 
     {
         while(!isEmpty())

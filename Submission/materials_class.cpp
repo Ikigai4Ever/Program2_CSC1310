@@ -79,17 +79,28 @@ float Materials::getMaterialAmount()const{
     return this->matAmount;
 }
 
-
+/*
+ *      FUNCTION: operator==() 
+ *       PURPOSE: 
+ */
 bool Materials::operator==(const Materials& right_comparison)
 {
     return this->matPrice == right_comparison.matPrice;
 }
 
+/*
+ *      FUNCTION: operator<() 
+ *       PURPOSE: 
+ */
 bool Materials::operator<(const Materials& right_comparison)
 {
     return this->matPrice < right_comparison.matPrice;
 }
 
+/*
+ *      FUNCTION: operator>()
+ *       PURPOSE: 
+ */
 bool Materials::operator>(const Materials& right_comparison)
 {
     return this->matPrice > right_comparison.matPrice;
