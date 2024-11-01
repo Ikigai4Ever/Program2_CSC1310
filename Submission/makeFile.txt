@@ -1,0 +1,2 @@
+makeFile: main.cpp materials_class.cpp list_node.h materials_class.h storage_class.h
+    g++ -o makeFile main.cpp materials_class.cpp list_node.h materials_class.h storage_class.h
