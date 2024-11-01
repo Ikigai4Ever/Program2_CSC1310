@@ -187,8 +187,8 @@ class Storage{
 
     void quicksort(ListNode<Materials>* start, ListNode<Materials>* end, bool ac)
     {
-        std::cout << "hello you are in quicksort";
-        if (start == end || start == NULL || end == NULL) //not sure if needed
+        //std::cout << "hello you are in quicksort";
+        if (start == NULL|| start == end || start == end->getNext()) //not sure if needed
         return;
 
         ListNode<Materials>* piviot = partition(start,end,ac);
@@ -203,7 +203,7 @@ class Storage{
 
     ListNode<Materials>* partition(ListNode<Materials>* start, ListNode<Materials>* end, bool ac)
     {   
-        std::cout << "hello you are in partition";
+        //std::cout << "hello you are in partition";
         Materials pivdata = end->getData();
         ListNode<Materials>* index = start; 
 
@@ -211,7 +211,10 @@ class Storage{
         {
             if((ac&&current->getData() < pivdata)||(!ac&&current->getData() > pivdata)) //YUCK, first is for acsending, second is for descnedning
             {
-                swap(index->getData(),current->getData());
+                if (index != current) // Check to avoid unnecessary swaps
+            {
+                swap(index->getData(), current->getData());
+            }
                 index = index->getNext();
             }
 
@@ -226,6 +229,7 @@ class Storage{
     template<typename T>
     void swap(T &a, T &b) 
     {
+        std::cout << "HEY BIG DWAG YOUR IN SWAP";
     T temp = a; // temporay version of a
     a = b;      // make a and b
     b = temp;   // make b into a
