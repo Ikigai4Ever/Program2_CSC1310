@@ -242,10 +242,10 @@ class Storage{
         os << "Type: " << mat.getMaterialType()
            << ", Color: " << mat.getMaterialColor()
            << ", Price: " << mat.getMaterialPrice()
-           << ", Amount: " << mat.getMaterialAmount();
+           << ", Amount: " << mat.getMaterialAmount()<<std::endl;
         current = current->getNext(); // Move to the next node in the linked list
     }
-    os<<"\n(END OF LIST)\n";
+    os<<"(END OF LIST)\n";
     return os; 
 }
 
