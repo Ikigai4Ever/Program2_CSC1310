@@ -94,7 +94,7 @@ class Storage{
 
       
         ListNode<Materials>* temp = head; //set the temp to the head
-        //mat = head->getData();                                      //maybe delete this after
+        
         head = head->getNext();
         delete temp;
         
@@ -147,7 +147,7 @@ class Storage{
             return;
         } 
 
-        //mat = tail->getData();                                        //delete after
+        
 
         if(head==tail) //edge case for one elemnt linked list
         {
@@ -312,7 +312,7 @@ class Storage{
     {
         while(!isEmpty())
         {
-            //Materials temp;
+            
             pop_front();
 
         }
