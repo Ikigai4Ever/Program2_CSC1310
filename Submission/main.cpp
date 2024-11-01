@@ -87,14 +87,14 @@ int main()
             else if(menuChoice == 1)
             {
                 cout<<"\n*********************************************************"<<endl;
-                myStorage.pop_front(myMats); //pops the front element from the list
+                myStorage.pop_front(); //pops the front element from the list
                 
             }
             //menuChoice 2 will remove from the bottom
             else if(menuChoice == 2)
             {
                 cout<<"\n*********************************************************"<<endl;
-                myStorage.pop_back(myMats); //pops the bottom element from the list
+                myStorage.pop_back(); //pops the bottom element from the list
                 
             }
             else if(menuChoice == 3)

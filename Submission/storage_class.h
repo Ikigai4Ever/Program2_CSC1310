@@ -84,7 +84,7 @@ class Storage{
  *      FUNCTION: pop_front() 
  *       PURPOSE: remove from the top of the list
  */
-    void pop_front(Materials &mat) 
+    void pop_front() 
     {
         if (isEmpty()) //edge case for empty
         {
@@ -94,7 +94,7 @@ class Storage{
 
       
         ListNode<Materials>* temp = head; //set the temp to the head
-        mat = head->getData();                                      //maybe delete this after
+        //mat = head->getData();                                      //maybe delete this after
         head = head->getNext();
         delete temp;
         
@@ -139,7 +139,7 @@ class Storage{
  *      FUNCTION: pop_back() 
  *       PURPOSE: remove from the bottom of the list 
  */
-    void pop_back(Materials &mat) 
+    void pop_back() 
     {
         if (isEmpty()) //edeg case for empty
         {
@@ -147,7 +147,7 @@ class Storage{
             return;
         } 
 
-        mat = tail->getData();                                        //delete after
+        //mat = tail->getData();                                        //delete after
 
         if(head==tail) //edge case for one elemnt linked list
         {
@@ -312,8 +312,8 @@ class Storage{
     {
         while(!isEmpty())
         {
-            Materials temp;
-            pop_front(temp);
+            //Materials temp;
+            pop_front();
 
         }
 
