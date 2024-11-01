@@ -1,8 +1,11 @@
 /*
  *         NAME: Ty Ahrens
  *      PROGRAM: materials_class.h
- *         DATE: 10/23/24
- *      PURPOSE: 
+ *         DATE: 10/31/24
+ *      PURPOSE: Data class to set/get the material types, color, price, 
+ *               and amount of each material. There are also comparison 
+ *               and output overloaded operators for the material price 
+ *               well.
  */
 
 #ifndef MATERIALS_CLASS_H

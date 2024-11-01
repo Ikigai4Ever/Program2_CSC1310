@@ -12,9 +12,6 @@
 #include <iomanip>
 
 template <typename T>
-/*****************************************************************
-							ListNode Class
-******************************************************************/
 class ListNode{
     private:			
 		T data;         // Data of the template type
@@ -55,8 +52,8 @@ class ListNode{
 	
 		// Constructor
 		ListNode (T nodeValue){
-			this->data = nodeValue;
-			this->next = NULL;
+			this->data = nodeValue; //point the data to the current node
+			this->next = NULL;  //set the next node to NULL
 		}
 };
 

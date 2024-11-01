@@ -1,8 +1,8 @@
 /*
- *      NAME:   Ty Ahrens
+ *         NAME: Ty Ahrens
  *      PROGRAM: materials_class.cpp
- *      DATE: 10/31/24
- *      PURPOSE: 
+ *         DATE: 10/31/24
+ *      PURPOSE: This is the functions for the materials_class.h
  */
 
 #include "materials_class.h"
@@ -110,15 +110,19 @@ bool Materials::operator>(const Materials& right_comparison){
 
 Materials::Materials(){
     std::cin.ignore();
+    //get the material type
     std::cout << "Please enter in material name:\t";
     getline(std::cin, this->matType);
-    setMaterialType(this->matType);  
+    setMaterialType(this->matType);
+    //get the material color  
     std::cout << "Please enter in material color:\t";
     getline(std::cin, this->matColor);
     setMaterialColor(this->matColor);
+    //get the material price
     std::cout << "Please enter in material price (nearest cent):\t";
     std::cin >> this->matPrice;
     setMaterialPrice(this->matPrice);
+    //get the material amount
     std::cout << "Please enter in material abundance (nearest hundreth):\t";
     std::cin >> this->matAmount;
     setMaterialAmount(this->matAmount);
