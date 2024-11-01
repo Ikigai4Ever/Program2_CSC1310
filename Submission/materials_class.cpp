@@ -81,7 +81,7 @@ double Materials::getMaterialAmount(){
 
 /*
  *      FUNCTION: operator== 
- *       PURPOSE: 
+ *       PURPOSE: compare if a material price is equal to the current material price
  */
 bool Materials::operator==(const Materials& right_comparison){
     return this->matPrice == right_comparison.matPrice;
@@ -89,7 +89,7 @@ bool Materials::operator==(const Materials& right_comparison){
 
 /*
  *      FUNCTION: operator< 
- *       PURPOSE: 
+ *       PURPOSE: compare if a material price is greater than the current material price
  */
 bool Materials::operator<(const Materials& right_comparision){
     return this->matPrice < right_comparision.matPrice;
@@ -97,7 +97,7 @@ bool Materials::operator<(const Materials& right_comparision){
 
 /*
  *      FUNCTION: operator> 
- *       PURPOSE: 
+ *       PURPOSE: compare if a material price is less than the current material price
  */
 bool Materials::operator>(const Materials& right_comparison){
     return this->matPrice > right_comparison.matPrice;
