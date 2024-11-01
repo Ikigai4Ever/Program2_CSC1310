@@ -33,6 +33,10 @@ class ListNode{
         void setNext(ListNode sentNext){
             this->next = sentNext;
         }
+
+        ListNode* getNext() const {
+            return this->next;
+        }
 	
 		// Constructor
 		ListNode (T nodeValue){
