@@ -189,11 +189,11 @@ class Storage{
 
         ListNode<Materials>* piviot = partition(start,end,ac);
         
-        if(start != piviot)
-        quicksort(piviot->getNext(),end,ac); 
+        if (piviot != start) 
+        quicksort(start, piviot, ac); 
 
-        if(piviot != end) 
-        quicksort(start,piviot,ac);
+        if (piviot->getNext() != end) 
+        quicksort(piviot->getNext(), end, ac);
 
     }
 
