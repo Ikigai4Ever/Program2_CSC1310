@@ -30,7 +30,7 @@ void Materials::setMaterialColor(std::string materialColor){
  *       PURPOSE: set the material price at the current node
  */
 
-void Materials::setMaterialPrice(float materialPrice){
+void Materials::setMaterialPrice(double materialPrice){
     this->matPrice = materialPrice; 
 }
 
@@ -39,7 +39,7 @@ void Materials::setMaterialPrice(float materialPrice){
  *       PURPOSE: set the material amount at the current node
  */
 
-void Materials::setMaterialAmount(float materialAmount){
+void Materials::setMaterialAmount(double materialAmount){
     this->matAmount = materialAmount;
 }
 
@@ -66,7 +66,7 @@ std::string Materials::getMaterialColor(){
  *       PURPOSE: get the material price at the current node
  */
 
-float Materials::getMaterialPrice(){
+double Materials::getMaterialPrice(){
     return this->matPrice;
 }
 
@@ -75,8 +75,32 @@ float Materials::getMaterialPrice(){
  *       PURPOSE: get the material type at the current node
  */
 
-float Materials::getMaterialAmount(){
+double Materials::getMaterialAmount(){
     return this->matAmount;
+}
+
+/*
+ *      FUNCTION: operator== 
+ *       PURPOSE: 
+ */
+bool Materials::operator==(const Materials& right_comparison){
+    return this->matPrice == right_comparison.matPrice;
+}
+
+/*
+ *      FUNCTION: operator< 
+ *       PURPOSE: 
+ */
+bool Materials::operator<(const Materials& right_comparision){
+    return this->matPrice < right_comparision.matPrice;
+}
+
+/*
+ *      FUNCTION: operator> 
+ *       PURPOSE: 
+ */
+bool Materials::operator>(const Materials& right_comparison){
+    return this->matPrice > right_comparison.matPrice;
 }
 
 /*
@@ -85,7 +109,19 @@ float Materials::getMaterialAmount(){
  */
 
 Materials::Materials(){
-    
+    std::cin.ignore();
+    std::cout << "Please enter in material name:\t";
+    getline(std::cin, this->matType);
+    setMaterialType(this->matType);  
+    std::cout << "Please enter in material color:\t";
+    getline(std::cin, this->matColor);
+    setMaterialColor(this->matColor);
+    std::cout << "Please enter in material price (nearest cent):\t";
+    std::cin >> this->matPrice;
+    setMaterialPrice(this->matPrice);
+    std::cout << "Please enter in material abundance (nearest hundreth):\t";
+    std::cin >> this->matAmount;
+    setMaterialAmount(this->matAmount);
 }
 
 /*
