@@ -194,10 +194,10 @@ class Storage{
         ListNode<Materials>* piviot = partition(start,end,ac);
         
         if(start != piviot)
-        quicksort(start,piviot,ac);
+        quicksort(piviot->getNext(),end,ac); 
 
         if(piviot != end) 
-        quicksort(piviot->getNext(),end,ac);
+        quicksort(start,piviot,ac);
 
     }
 
@@ -211,10 +211,10 @@ class Storage{
         {
             if((ac&&current->getData() < pivdata)||(!ac&&current->getData() > pivdata)) //YUCK, first is for acsending, second is for descnedning
             {
-                if (index != current) // Check to avoid unnecessary swaps
-            {
+                
+            
                 swap(index->getData(), current->getData());
-            }
+            
                 index = index->getNext();
             }
 
