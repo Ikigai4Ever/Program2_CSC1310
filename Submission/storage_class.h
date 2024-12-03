@@ -38,7 +38,7 @@ class Storage{
         preload.setMaterialType("Mulch");
         preload.setMaterialColor("Black"); 
         preload.setMaterialPrice(12.87); 
-        preload.setMaterialAmount(9.8); 
+        preload.setMaterialAmount(9); 
         push_front(preload);
         
         preload.setMaterialType("Sand");
