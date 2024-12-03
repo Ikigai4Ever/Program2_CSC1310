@@ -37,3 +37,13 @@ The functions that we are going to need are:
  8) setMaterialColor(): set the material type for a node
  9) getMaterialAmount(): get the material amount for a specified node
  10) setmaterialAmount(): est the amount of a material in a node
+
+## Final Write Up
+
+For program 2, what the group had gone to achieve was a program that would manage a loose construction packing material storage facility (like dirt and gravel). We wanted to create a program that would sort the materials based on the material price and organize it in a linked list so that the prices of materials could be found at the cheapest, most expensive, or any price range for a customer. We were successful in achieving this, as we were able to add more of an existing material, add a completely new material, remove a material, and check how much of each material we have in the storage facility. 
+ 
+The process for creating this was knowing what the three different menu selection were going to be and then dividing up the main, linked list, data, and list node classes up amongst each of the group members. We then made skeleton codes for each of the programs to help each other begin working more in depth in their part of the program. We then clarified what each person had to do to meet all the requirements of the assignment. If there was anything that we think we could have done differently, it would have been to have some more time testing along with talking to one another to express what each other needed to do their part of the program. 
+
+What we learned was how to use a custom template along with how to use comparison overloaded operators to compare different parts of the linked list. What the expected output of the program is the user to see what is already preloaded in the storage and can see if a material had run out when removing or add to a preexisting part of the storage unit or a whole new material into the unit. How the TA will test the program is by using the testcase.txt file that we have made along with the MakeFile that is attached in the submission folder as well.
+
+This program ran a lot more smoothly because the learning curve from GitHub is not relevant for this program. The overall workflow for the program was also good as it had a lot more communication with one another compared to the last program. We do think that it would have been nice to have known that the second week (week five).
